@@ -1,0 +1,442 @@
+/* ==========================================================================
+   Print & Thermal POS Stylesheet - Mangalmurti Products
+   Optimized for 80mm Thermal Receipt Printers & Clean Screen Previews
+   ========================================================================== */
+
+/* Google Fonts Import for clean Devanagari & crisp numbers */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Mukta:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --pos-primary: #0f4c3a;
+  --pos-primary-dark: #092c22;
+  --pos-gold: #b8972e;
+  --pos-gold-light: #d4af37;
+  --pos-text: #1e293b;
+  --pos-muted: #64748b;
+  --pos-border: #cbd5e1;
+}
+
+/* Base Thermal Receipt Styles (Applies to both Screen Preview & Print) */
+.receipt-thermal {
+  font-family: 'Mukta', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #111827;
+  line-height: 1.35;
+  box-sizing: border-box;
+}
+
+.receipt-thermal * {
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.receipt-thermal .store-header {
+  text-align: center;
+  padding-bottom: 8px;
+  border-bottom: 1.5px dashed #334155;
+  margin-bottom: 8px;
+}
+
+.receipt-thermal .store-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--pos-primary);
+  line-height: 1.15;
+  margin-bottom: 2px;
+}
+
+.receipt-thermal .store-sub-en {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--pos-gold);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.receipt-thermal .store-tagline {
+  font-size: 11px;
+  color: #475569;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.receipt-thermal .store-location {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 3px;
+}
+
+.receipt-thermal .store-owner-info {
+  font-size: 11.5px;
+  color: #1e293b;
+  line-height: 1.3;
+}
+
+.receipt-thermal .store-owner-info strong {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Metadata Section */
+.receipt-thermal .bill-meta {
+  font-size: 11.5px;
+  border-bottom: 1.5px dashed #334155;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+
+.receipt-thermal .meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.receipt-thermal .meta-row:last-child {
+  margin-bottom: 0;
+}
+
+.receipt-thermal .mode-badge {
+  display: inline-block;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+/* Items Table */
+.receipt-thermal table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11.5px;
+  margin-bottom: 6px;
+}
+
+.receipt-thermal th {
+  border-top: 1.5px solid #0f4c3a;
+  border-bottom: 1.5px solid #0f4c3a;
+  padding: 5px 2px;
+  font-weight: 700;
+  color: var(--pos-primary);
+  text-align: left;
+  font-size: 11.5px;
+}
+
+.receipt-thermal td {
+  padding: 5px 2px;
+  vertical-align: top;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.receipt-thermal .col-item {
+  width: 48%;
+  text-align: left;
+}
+
+.receipt-thermal .col-qty {
+  width: 24%;
+  text-align: center;
+  font-weight: 600;
+}
+
+.receipt-thermal .col-amount {
+  width: 28%;
+  text-align: right;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+
+.receipt-thermal .item-name {
+  font-weight: 700;
+  font-size: 12.5px;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.receipt-thermal .item-rate {
+  font-size: 10px;
+  color: #64748b;
+  margin-top: 1px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Items Summary Strip (Total Items & Total Weight) */
+.receipt-thermal .summary-strip {
+  font-size: 10.5px;
+  font-weight: 600;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 4px;
+  padding: 4px 6px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+/* Totals Section */
+.receipt-thermal .total-section {
+  border-top: 1.5px dashed #334155;
+  border-bottom: 1.5px dashed #334155;
+  padding: 6px 0;
+  margin-bottom: 8px;
+}
+
+.receipt-thermal .total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11.5px;
+  margin-bottom: 3px;
+}
+
+.receipt-thermal .total-row span:last-child {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.receipt-thermal .grand-total-box {
+  background: var(--pos-primary);
+  color: #ffffff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.receipt-thermal .grand-total-label {
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.receipt-thermal .grand-total-sub {
+  font-size: 9.5px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.receipt-thermal .grand-total-amount {
+  font-size: 17px;
+  font-weight: 800;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
+}
+
+/* Footer Note */
+.receipt-thermal .footer-note {
+  text-align: center;
+  font-size: 10.5px;
+  color: #475569;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.receipt-thermal .footer-thankyou {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 11.5px;
+}
+
+.receipt-thermal .footer-brand {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--pos-primary);
+  margin-top: 3px;
+}
+
+.receipt-thermal .footer-credit-warning {
+  background: #fef2f2;
+  border: 1px solid #f87171;
+  color: #b91c1c;
+  padding: 3px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+
+/* ==========================================================================
+   Screen Preview Styling
+   ========================================================================== */
+.print-preview-wrapper {
+  background: #cbd5e1;
+  background-image: radial-gradient(#94a3b8 1px, transparent 1px);
+  background-size: 16px 16px;
+  padding: 2.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+}
+
+.receipt-thermal.screen-view {
+  background: #ffffff;
+  width: 350px;
+  max-width: 100%;
+  padding: 22px 18px 24px 18px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.15), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
+  border-top: 6px solid var(--pos-primary);
+  border-bottom: 3px dashed #94a3b8;
+  position: relative;
+}
+
+/* A4 Screen View */
+.invoice-a4.screen-view {
+  background: #fff;
+  max-width: 800px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-top: 6px solid var(--pos-primary);
+  font-family: 'Mukta', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+
+/* ==========================================================================
+   Print Media Query - Precise Thermal 80mm & A4 Output
+   ========================================================================== */
+@page {
+  margin: 0;
+  size: auto;
+}
+
+@media print {
+  /* Hide non-printable elements */
+  .header-nav,
+  .no-print,
+  .print-control-bar,
+  .btn,
+  .print-actions,
+  #toast-container,
+  footer {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-preview-wrapper {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    min-height: auto !important;
+  }
+
+  /* 80mm Thermal Receipt Layout for Paper Roll */
+  .receipt-thermal {
+    width: 74mm !important;
+    max-width: 76mm !important;
+    margin: 0 auto !important;
+    padding: 3mm 1mm !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border: none !important;
+    color: #000 !important;
+    font-size: 11px !important;
+    line-height: 1.25 !important;
+  }
+
+  .receipt-thermal .store-title {
+    color: #000 !important;
+    font-size: 16px !important;
+  }
+
+  .receipt-thermal .store-sub-en {
+    color: #000 !important;
+    font-size: 10px !important;
+  }
+
+  .receipt-thermal .store-header,
+  .receipt-thermal .bill-meta,
+  .receipt-thermal .total-section {
+    border-color: #000 !important;
+    border-style: dashed !important;
+    border-width: 1px !important;
+  }
+
+  .receipt-thermal th {
+    border-top: 1px solid #000 !important;
+    border-bottom: 1px solid #000 !important;
+    color: #000 !important;
+  }
+
+  .receipt-thermal td {
+    border-bottom: 1px dashed #bbb !important;
+  }
+
+  .receipt-thermal .summary-strip {
+    background: transparent !important;
+    border: 1px dashed #000 !important;
+    color: #000 !important;
+  }
+
+  /* Crisp high-contrast Grand Total Box for monochrome thermal heads */
+  .receipt-thermal .grand-total-box {
+    background: transparent !important;
+    color: #000 !important;
+    border: 1.5px solid #000 !important;
+    padding: 4px 6px !important;
+    border-radius: 0 !important;
+  }
+
+  .receipt-thermal .grand-total-amount {
+    color: #000 !important;
+    font-size: 16px !important;
+  }
+
+  .receipt-thermal .mode-badge {
+    border: 1px solid #000 !important;
+    background: transparent !important;
+    color: #000 !important;
+  }
+
+  .receipt-thermal .footer-brand {
+    color: #000 !important;
+  }
+
+  /* A4 Invoice Print Layout */
+  .invoice-a4 {
+    width: 100% !important;
+    max-width: 210mm !important;
+    margin: 0 auto !important;
+    padding: 12mm !important;
+    box-sizing: border-box !important;
+    font-family: 'Mukta', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  }
+
+  .invoice-a4 table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 15px 0 !important;
+  }
+
+  .invoice-a4 th {
+    background: #f0f0f0 !important;
+    border: 1px solid #999 !important;
+    padding: 8px !important;
+    font-size: 12px !important;
+    color: #000 !important;
+  }
+
+  .invoice-a4 td {
+    border: 1px solid #ccc !important;
+    padding: 8px !important;
+    font-size: 12px !important;
+    color: #000 !important;
+  }
+}

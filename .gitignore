@@ -1,0 +1,15 @@
+# SQLite temporary WAL and journal files
+*.db-journal
+*.db-wal
+*.db-shm
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Editor folders
+.vscode/
+.idea/
